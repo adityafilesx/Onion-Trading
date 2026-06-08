@@ -25,43 +25,367 @@ python3 -m uvicorn api.server:app --host 127.0.0.1 --port 8000
 
 ---
 
-## ✨ Features
+## ✨ Dashboard Pages & Features
 
-### 📊 Dashboard
-- Real-time account balance
-- Order statistics (total, win rate, last status)
-- Average confidence score with visual gauge
-- Recent activity log with live updates
-- Auto-refresh every 10 seconds
+### 📊 Dashboard Overview Page
+![Dashboard Overview](https://imgur.com/raw/dashboard-overview.png)
 
-### 📝 Place Order
-- Symbol input with validation
-- BUY/SELL toggle
-- MARKET/LIMIT order types
-- Real-time confidence scoring
-- Live metrics breakdown (Volatility, Depth, Proximity)
-- Dry run mode for simulations
-- One-click order execution
+**Purpose**: Central hub for monitoring your trading performance and account status
 
-### 📋 Order History
-- Complete order list with details
-- Status tracking (FILLED, REJECTED, NEW)
-- Confidence score per order
-- Time, symbol, side, quantity, price, status
-- Export functionality
-- Auto-refresh indicator
+**Key Components**:
+- ✅ **Real-time Account Balance** - Displays current USDT balance in top-right corner
+- ✅ **Total Orders Today** - Shows count of all executed orders for the current session
+- ✅ **Win Rate** - Percentage of profitable trades with mini chart visualization
+- ✅ **Last Order Status** - Live indicator showing the status of most recent order (NEW, FILLED, etc.)
+- ✅ **Average Confidence Score** - Visual gauge (0-100) showing overall trading confidence
+- ✅ **Recent Activity Log** - Table with last 10 executed trades showing:
+  - Timestamp
+  - Trading pair (BTCUSDT, ETHUSDT, etc.)
+  - Action (BUY/SELL with color coding)
+  - Execution price
+  - Confidence score achieved
+  - Order result/status
 
-### 🔍 Confidence Analyzer
-- Signal analysis for any trading pair
-- Configurable parameters (side, type, price)
-- Visual confidence gauge
-- Grade system (A+ to F)
-- Trading recommendations
-- Detailed metrics breakdown
+**Why It's Important**:
+- 🎯 **Quick Overview**: See all critical metrics at a glance
+- 📊 **Performance Tracking**: Monitor win rate and confidence trends
+- ⚡ **Real-time Updates**: Auto-refreshes every 10 seconds for live data
+- 📈 **Activity Monitor**: Quickly spot order patterns and execution issues
+
+**Use Case**: Start your trading session here to verify account health and review performance.
 
 ---
 
-## 📁 Project Structure
+### 📝 Execution Terminal (Place Order Page)
+![Execution Terminal](https://imgur.com/raw/execution-terminal.png)
+
+**Purpose**: Professional order placement interface with real-time confidence scoring
+
+**Left Section - Order Configuration**:
+- 🎯 **Market Pair Input** - Enter trading symbol (BTCUSDT, ETHUSDT, etc.)
+- 🔄 **Side Toggle** - BUY (green) or SELL (red) buttons
+- 📊 **Execution Type** - MARKET (instant) or LIMIT (price-based)
+- 📦 **Quantity Input** - Set BTC amount (minimum 0.0001)
+- 💰 **Limit Price** - Appears when LIMIT type selected
+- 🧪 **Dry Run Toggle** - Practice mode without actual execution
+- ✅ **Place Order Button** - Execute the order
+
+**Right Section - Confidence Gauge**:
+- 🎯 **Circular Gauge** - Real-time score 0-100 with color intensity
+- 🏆 **Grade Display** - A/B/C/D rating of market conditions
+- 📈 **Recommendation Text** - Trading advice based on analysis
+- 📊 **Metrics Breakdown**:
+  - **Volatility Index** - Market movement (90% = low volatility = good)
+  - **Market Depth** - Order book liquidity (90% = deep book = good)
+  - **Price Proximity** - How close price is to mid-market (80% = good)
+
+**Why It's Important**:
+- 🎮 **Professional Interface**: Mimics professional trading terminals
+- 🤖 **AI-Powered Decisions**: Confidence score guides trading choices
+- 🧪 **Risk-Free Testing**: Dry-run mode lets you test without risk
+- 📊 **Live Analysis**: See market conditions in real-time
+
+**Use Case**: Place orders during optimal market conditions when confidence is high (Grade A).
+
+---
+
+### 📋 Order History Page
+![Order History](https://imgur.com/raw/order-history.png)
+
+**Purpose**: Complete audit trail and performance analysis of all executed trades
+
+**Table Columns**:
+- ⏱️ **TIME** - Exact timestamp of execution (HH:MM:SS)
+- 🏷️ **SYMBOL** - Trading pair (BTCUSDT, ETHUSDT)
+- 📊 **SIDE** - BUY (green) or SELL (red)
+- 🎯 **TYPE** - MARKET or LIMIT
+- 📦 **QUANTITY** - Amount traded (in BTC)
+- 💵 **PRICE** - Execution price (USDT)
+- ✅ **STATUS** - Order result (NEW, FILLED, REJECTED)
+- 🎓 **CONF. SCORE** - Confidence at time of execution
+
+**Additional Features**:
+- 📥 **Export CSV** - Download all trade data for analysis
+- 🔄 **30s Auto-Refresh** - Automatically updates with new orders
+- 📊 **Live Indicator** - Shows "30s Auto-refresh active"
+
+**Why It's Important**:
+- 📈 **Performance Analysis** - Review all trades and identify patterns
+- 🔍 **Quality Control** - See confidence scores vs. actual results
+- 📊 **Tax & Audit** - Complete record for accounting purposes
+- 🎓 **Learning** - Analyze wins and losses to improve strategy
+- 📥 **Data Export** - Export for third-party analysis tools
+
+**Use Case**: Review historical performance to refine trading strategy and validate confidence algorithm accuracy.
+
+---
+
+### 🔍 Confidence Analyzer Page
+![Confidence Analyzer](https://imgur.com/raw/confidence-analyzer.png)
+
+**Purpose**: Advanced market analysis tool for understanding trading conditions
+
+**Input Controls**:
+- 🏷️ **Symbol Selection** - Choose any trading pair
+- 📊 **Side Selection** - Analyze BUY or SELL conditions
+- 🎯 **Order Type** - MARKET or LIMIT analysis
+- 💰 **Price Input** - Limit price for LIMIT orders (conditional)
+
+**Analysis Output**:
+- 🎯 **Confidence Score** - 0-100 scale showing market quality
+- 🏆 **Grade System**:
+  - **Grade A** (80-100): Excellent conditions - TRADE
+  - **Grade B** (60-79): Good conditions - PROCEED
+  - **Grade C** (40-59): Caution conditions - CAREFUL
+  - **Grade D** (0-39): Poor conditions - WAIT
+- 📝 **Recommendation** - AI-generated trading advice
+- 📊 **Detailed Breakdown**:
+  - **Volatility** - Market stability analysis
+  - **Depth** - Liquidity assessment
+  - **Price Proximity** - Distance from mid-market
+
+**Why It's Important**:
+- 🤖 **AI Decision Support** - Algorithm analyzes 3 key market factors
+- 📊 **Risk Management** - Avoid trading in poor conditions (Grade D)
+- 🎓 **Market Education** - Learn what makes good trading conditions
+- 🔍 **Signal Testing** - Test confidence on different symbols/times
+- ⚡ **Real-time Analysis** - Updates instantly as parameters change
+
+**Use Case**: Before placing orders, analyze confidence levels to make informed trading decisions.
+
+---
+
+## Complete Feature Set
+
+| Feature | Dashboard | Place Order | Order History | Analyzer |
+|---------|-----------|------------|--------------|----------|
+| View Balance | ✅ | ✅ | ✅ | ✅ |
+| Place Orders | ❌ | ✅ | ❌ | ❌ |
+| Dry-Run Testing | ❌ | ✅ | ❌ | ❌ |
+| Confidence Scoring | ✅ | ✅ | ✅ | ✅ |
+| Order History | ✅ | ❌ | ✅ | ❌ |
+| Performance Stats | ✅ | ❌ | ❌ | ❌ |
+| Market Analysis | ❌ | ✅ | ❌ | ✅ |
+| Export Data | ❌ | ❌ | ✅ | ❌ |
+
+---
+
+## �️ Navigation & Workflow
+
+### Recommended Trading Workflow
+
+```
+START → Dashboard (Check Status) → Analyzer (Check Conditions)
+          ↓                              ↓
+          └─→ Place Order (Grade A?) ←─┘
+                     ↓
+              Execute Order (Dry-Run First)
+                     ↓
+              View Order History (Review Results)
+                     ↓
+          Repeat or Analyze Performance
+```
+
+### Quick Navigation Guide
+
+| Goal | Step 1 | Step 2 | Step 3 |
+|------|--------|--------|--------|
+| **Check Account** | Dashboard | View top-right balance | Done |
+| **Place Order** | Click "Place Order" | Configure & execute | Done |
+| **Test Order** | Place Order | Toggle "Dry Run" ON | Done |
+| **Review Trades** | Order History | View table | Done |
+| **Analyze Market** | Confidence Analyzer | Check Grade | Done |
+| **Find Best Time** | Analyzer | Wait for Grade A | Done |
+
+---
+
+## 🎯 Trading Strategy Using Dashboard
+
+### Conservative Approach (Recommended for Beginners)
+1. **Dashboard** → Check account health
+2. **Analyzer** → Verify Grade A conditions
+3. **Place Order** → Set dry-run first, test order
+4. **Wait 5 min** → Observe order execution
+5. **Order History** → Verify results
+6. **Repeat** → Place live order if confident
+
+### Active Trading (For Experienced)
+1. **Monitor Dashboard** → Watch real-time updates
+2. **Quick Analyze** → Check confidence on target symbol
+3. **Place Order** → Execute immediately if Grade A
+4. **Track History** → Monitor P&L on dashboard
+5. **Adjust** → Place offsetting orders as needed
+
+### Performance Optimization
+1. **Weekly Review** → Go to Order History
+2. **Analyze Patterns** → Review all trades
+3. **Check Win Rate** → See performance metric
+4. **Grade Analysis** → Correlate confidence with results
+5. **Refine Strategy** → Adjust trading thresholds
+
+---
+
+## 📊 Understanding the Confidence Score
+
+### How Confidence is Calculated
+
+```
+Confidence Score = (Volatility × 30%) + (Depth × 40%) + (Proximity × 30%)
+```
+
+### What Each Component Means
+
+**1. Volatility (30% weight)**
+- Measures market movement from 1-minute candles
+- 90% = Stable market (good for limit orders)
+- 25% = Highly volatile (risky)
+
+**2. Market Depth (40% weight)** ← Most Important
+- Measures order book liquidity
+- 100% = Abundant liquidity (instant fills)
+- 20% = Thin order book (slippage risk)
+
+**3. Price Proximity (30% weight)**
+- For LIMIT orders: How close to mid-market
+- 95% = Perfect price (high chance to fill)
+- 20% = Far from market (may never fill)
+
+### Grade Interpretation
+
+| Grade | Score | Meaning | Action |
+|-------|-------|---------|--------|
+| **A** | 80-100 | Excellent | 🟢 TRADE |
+| **B** | 60-79 | Good | 🟡 OK to trade |
+| **C** | 40-59 | Caution | 🟠 Be careful |
+| **D** | 0-39 | Poor | 🔴 WAIT |
+
+---
+
+## 💡 Pro Tips for Using the Dashboard
+
+### Tip 1: Dry-Run First
+Always test with dry-run mode before placing live orders. This helps you:
+- Validate order parameters
+- See confidence score for your order
+- Test market conditions without risk
+- Learn the interface
+
+### Tip 2: Monitor Confidence Trends
+- High scores (Grade A) = Good trading opportunity
+- Consistency matters - wait for sustained Grade A
+- Don't ignore Grade D conditions (too much risk)
+- Use historical confidence to refine timing
+
+### Tip 3: Use Order History
+- Correlate confidence scores with actual results
+- Find your personal win rate threshold
+- Identify patterns in your trading
+- Export data for deeper analysis
+
+### Tip 4: Balance Order Types
+- **Market Orders**: Fast execution, no price control
+- **Limit Orders**: Price control, but may not fill
+- Mix both based on market conditions
+- Use limits when Grade A (good depth & proximity)
+
+### Tip 5: Time Your Trades
+- Trade during high-volume times (Grade A likely)
+- Avoid low-liquidity periods (Grade D)
+- Check historical patterns on Order History
+- Dashboard shows real-time conditions (use it!)
+
+---
+
+## 🔧 Dashboard Customization
+
+### Change Refresh Rate
+Edit `static/app.js` line ~250:
+```javascript
+// Change 10000 to desired milliseconds
+setInterval(loadData, 10000);  // 10 seconds
+```
+
+### Modify Confidence Weights
+Edit `bot/confidence.py`:
+```python
+_VOLATILITY_WEIGHT = 0.30      # Currently 30%
+_DEPTH_WEIGHT = 0.40           # Currently 40%
+_PRICE_PROXIMITY_WEIGHT = 0.30 # Currently 30%
+```
+
+### Change Color Scheme
+Edit `static/index.html` CSS section:
+```css
+/* Primary: Green (#00e479) */
+/* Secondary: Red (#ffb3ad) */
+/* Customize to your preference */
+```
+
+### Adjust Grade Thresholds
+Edit `bot/confidence.py`:
+```python
+_GRADE_THRESHOLDS = (
+    (80, "A", "Excellent conditions to place order"),
+    (60, "B", "Good conditions to place order"),
+    (40, "C", "Proceed with caution"),
+    (0, "D", "High risk — consider waiting"),
+)
+```
+
+---
+
+## 📈 Performance Metrics Explained
+
+### Total Orders Today
+- **Metric**: Count of all executed orders
+- **Why It Matters**: Shows trading activity level
+- **Good Range**: 5-20 orders for active trader
+- **Alert**: > 50 might indicate overtrading
+
+### Win Rate
+- **Metric**: % of orders with positive outcome
+- **Why It Matters**: Shows strategy effectiveness
+- **Good Range**: 55-65% (edge in crypto trading)
+- **Alert**: < 40% indicates poor signals
+
+### Last Order Status
+- **Metric**: Most recent order state (NEW, FILLED, etc.)
+- **Why It Matters**: Immediate feedback on execution
+- **Good Range**: FILLED (order completed)
+- **Alert**: REJECTED (validation failed)
+
+### Confidence Score
+- **Metric**: Average score across all trades
+- **Why It Matters**: Shows if you're trading quality
+- **Good Range**: 70+ (trading only Grade A/B)
+- **Alert**: < 50 (too many poor-condition trades)
+
+---
+
+## 🎓 Learning Path
+
+### Beginner (First Trade)
+1. Open Dashboard → Check balance
+2. Go to Analyzer → See confidence calculation
+3. Place Order → Use dry-run first
+4. Observe → Wait for execution
+5. Review → Check Order History
+
+### Intermediate (After 10 Trades)
+1. Monitor Dashboard daily
+2. Trade only Grade A conditions
+3. Mix market and limit orders
+4. Review win rate weekly
+5. Adjust confidence thresholds
+
+### Advanced (After 50 Trades)
+1. Analyze confidence correlation with results
+2. Optimize trading times based on patterns
+3. Customize confidence weights
+4. Test different trading strategies
+5. Export data for external analysis
+
+---
 
 ```
 Onion Trader/
