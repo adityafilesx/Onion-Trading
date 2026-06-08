@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from typing import Optional
+
 import typer
 import uvicorn
 from rich import print as rprint
@@ -70,7 +72,7 @@ def place_order(
     side: str = typer.Option(..., "--side", help="BUY or SELL"),
     order_type: str = typer.Option(..., "--type", help="MARKET or LIMIT"),
     quantity: float = typer.Option(..., "--quantity", help="Order quantity"),
-    price: float | None = typer.Option(None, "--price", help="Limit price (required for LIMIT)"),
+    price: Optional[float] = typer.Option(None, "--price", help="Limit price (required for LIMIT)"),
     dry_run: bool = typer.Option(False, "--dry-run", help="Validate and preview without submitting"),
 ) -> None:
     """Place a futures order with confidence scoring."""
