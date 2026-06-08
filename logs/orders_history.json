@@ -1,0 +1,182 @@
+[
+  {
+    "recorded_at": "2026-06-08T15:45:15.947809+00:00",
+    "request": {
+      "symbol": "BTCUSDT",
+      "side": "BUY",
+      "type": "MARKET",
+      "quantity": 0.001,
+      "timestamp": 1780933515510
+    },
+    "confidence": {
+      "total_score": 85,
+      "grade": "A",
+      "recommendation": "Excellent conditions to place order",
+      "breakdown": {
+        "volatility": 90,
+        "depth": 86,
+        "price_proximity": 80
+      }
+    },
+    "response": {
+      "orderId": 14507218573,
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "8EOL4eCgQG5SsPGodoQpg8",
+      "price": "0.00",
+      "origQty": "0.0010",
+      "executedQty": "0.0000",
+      "cumQty": "0.0000",
+      "timeInForce": "GTC",
+      "type": "MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "BUY",
+      "positionSide": "BOTH",
+      "stopPrice": "0.00",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": 0,
+      "updateTime": 1780933515879
+    }
+  },
+  {
+    "recorded_at": "2026-06-08T15:45:25.030845+00:00",
+    "request": {
+      "symbol": "ETHUSDT",
+      "side": "SELL",
+      "type": "LIMIT",
+      "quantity": 0.5,
+      "timestamp": 1780933524553,
+      "price": 2500.0,
+      "timeInForce": "GTC"
+    },
+    "confidence": {
+      "total_score": 61,
+      "grade": "B",
+      "recommendation": "Good conditions to place order",
+      "breakdown": {
+        "volatility": 50,
+        "depth": 100,
+        "price_proximity": 20
+      }
+    },
+    "response": {
+      "orderId": 9337584014,
+      "symbol": "ETHUSDT",
+      "status": "NEW",
+      "clientOrderId": "pU3lE149adnMzpg4icJZEi",
+      "price": "2500.00",
+      "origQty": "0.500",
+      "executedQty": "0.000",
+      "cumQty": "0.000",
+      "timeInForce": "GTC",
+      "type": "LIMIT",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "0.00",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "LIMIT",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": 0,
+      "updateTime": 1780933524926
+    }
+  },
+  {
+    "recorded_at": "2026-06-08T15:50:35.514282+00:00",
+    "request": {
+      "symbol": "BTCUSDT",
+      "side": "BUY",
+      "type": "MARKET",
+      "quantity": 0.001,
+      "timestamp": 1780933835017
+    },
+    "confidence": {
+      "total_score": 91,
+      "grade": "A",
+      "recommendation": "Excellent conditions to place order",
+      "breakdown": {
+        "volatility": 90,
+        "depth": 100,
+        "price_proximity": 80
+      }
+    },
+    "response": {
+      "orderId": 14507451759,
+      "symbol": "BTCUSDT",
+      "status": "NEW",
+      "clientOrderId": "VtOR6Td6L8hfZJyOh41g68",
+      "price": "0.00",
+      "origQty": "0.0010",
+      "executedQty": "0.0000",
+      "cumQty": "0.0000",
+      "timeInForce": "GTC",
+      "type": "MARKET",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "BUY",
+      "positionSide": "BOTH",
+      "stopPrice": "0.00",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "MARKET",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": 0,
+      "updateTime": 1780933835381
+    }
+  },
+  {
+    "recorded_at": "2026-06-08T16:22:59.429680+00:00",
+    "request": {
+      "symbol": "ETHUSDT",
+      "side": "SELL",
+      "type": "LIMIT",
+      "quantity": 0.001,
+      "timestamp": 1780935779187,
+      "price": 64230.5,
+      "timeInForce": "GTC"
+    },
+    "confidence": {
+      "total_score": 50,
+      "grade": "C",
+      "recommendation": "Proceed with caution",
+      "breakdown": {
+        "volatility": 70,
+        "depth": 57,
+        "price_proximity": 20
+      }
+    },
+    "response": {
+      "orderId": 9338660267,
+      "symbol": "ETHUSDT",
+      "status": "NEW",
+      "clientOrderId": "1DxJnETUGnLFotEKzOc0y3",
+      "price": "64230.50",
+      "origQty": "0.001",
+      "executedQty": "0.000",
+      "cumQty": "0.000",
+      "timeInForce": "GTC",
+      "type": "LIMIT",
+      "reduceOnly": false,
+      "closePosition": false,
+      "side": "SELL",
+      "positionSide": "BOTH",
+      "stopPrice": "0.00",
+      "workingType": "CONTRACT_PRICE",
+      "priceProtect": false,
+      "origType": "LIMIT",
+      "priceMatch": "NONE",
+      "selfTradePreventionMode": "EXPIRE_MAKER",
+      "goodTillDate": 0,
+      "updateTime": 1780935779341
+    }
+  }
+]
